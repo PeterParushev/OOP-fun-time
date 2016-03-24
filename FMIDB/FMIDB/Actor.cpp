@@ -19,19 +19,6 @@ Actor::Actor(int age, Sex sex, int numberOfNominations, int numberOfWins)
 	m_numberOfWins = numberOfWins;
 }
 
-Actor::Actor(char* name, int age, Sex sex, int numberOfNominations, int numberOfWins)
-{
-	//warning SOME CONSTRUCTORS ARE MISSING FOR EDUCATIONAL PURPOSES
-	int nameLength = strlen(name);
-	m_name = new char[nameLength];
-	strcpy(m_name, name);
-
-	m_age = age;
-	m_sex = sex;
-	m_numberOfNominations = numberOfNominations;
-	m_numberOfWins = numberOfWins;
-}
-
 Actor::~Actor()
 {
 	if (m_name != nullptr)
@@ -40,12 +27,12 @@ Actor::~Actor()
 	}
 }
 
-char* Actor::GetName()
+char* Actor::GetName() const
 {
 	return m_name;
 }
 
-int Actor::GetAge()
+int Actor::GetAge() const
 {
 	return m_age;
 }
@@ -58,7 +45,7 @@ void Actor::SetAge(int age)
 	}
 }
 
-Sex Actor::GetSex()
+Sex Actor::GetSex() const
 {
 	return m_sex;
 }
@@ -68,7 +55,7 @@ void Actor::SetSex(Sex sex)
 	m_sex = sex;
 }
 
-int Actor::GetNumbetOfNominations()
+int Actor::GetNumbetOfNominations() const
 {
 	return m_numberOfNominations;
 }
@@ -78,5 +65,18 @@ void Actor::SetNumberOfNominations(int nominationCount)
 	if (nominationCount >= 0)
 	{
 		m_numberOfNominations = nominationCount;
+	}
+}
+
+int Actor::GetNumberOfWins() const
+{
+	return m_numberOfWins;
+}
+
+void Actor::SetNumberOfWins(int winCount)
+{
+	if (winCount >= 0)
+	{
+		m_numberOfWins = winCount;
 	}
 }

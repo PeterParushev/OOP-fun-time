@@ -20,15 +20,13 @@ public:
 	Actor(char* name, int age, Sex sex, int numberOfNominations, int numberOfWins);
 	~Actor();
 
-	char* GetName();
-	int GetAge();
+	char* GetName() const;
+	int GetAge() const;
 	void SetAge(int age);
-	Sex GetSex();
+	Sex GetSex() const;
 	void SetSex(Sex sex);
-	int GetNumbetOfNominations();
+	int GetNumbetOfNominations() const;
 	void SetNumberOfNominations(int nominationCount);
-
-	//Implement these
-	int GetNumberOfWins();
+	int GetNumberOfWins() const;
 	void SetNumberOfWins(int winCount);
 };
